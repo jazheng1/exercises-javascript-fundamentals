@@ -24,7 +24,7 @@ function isPowerOf(n, b) {
   if(n === 1){
     return true;
   }else{
-    while(n > b){
+    while(n >= b){
       b = b*b;
     }
   }
