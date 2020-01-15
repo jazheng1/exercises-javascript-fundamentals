@@ -14,10 +14,10 @@
  * @returns {boolean} True if num is even and false otherwise
  */
 function isEven(num) {
-  // Hint: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder
-  return _____;
-}
-
+    // Hint: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder
+    return num%2 === 0;
+  }
+  
 if (require.main === module) {
   let evenNumbers = [2, 20, 100, 768];
 
