@@ -21,6 +21,7 @@ function power(base, exponent) {
 
     That means you don't have to deal with, e.g., power(2, 1.5).
   */
+  return base ** exponent;
 }
 
 if (require.main === module) {
