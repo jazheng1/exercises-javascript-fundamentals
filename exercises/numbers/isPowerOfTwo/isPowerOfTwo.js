@@ -25,7 +25,7 @@ function isPowerOfTwo(num) {
   if(num === 0){
     return true;
   }else{
-    while(num > b){
+    while(num >= b){
       b = 2 * 2;
     }
   }
