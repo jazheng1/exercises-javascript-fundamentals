@@ -24,23 +24,22 @@ function isPowerOf(n, b) {
   if(n === 1){
     return true;
   }else{
-    let counter = 0;
     while(n > b){
       b = b*b;
-      counter++;
     }
   }
   return b === n;
 }
 
 if (require.main === module) {
-  console.log('Running sanity checks for isPowerOfTwo:');
+  console.log('Running sanity checks for isPowerOf:');
+  // Your sanity checks here.
+  
   console.log(isPowerOf(2,2) === true);
   console.log(isPowerOf(3,3) === true);
   console.log(isPowerOf(10, 2) === false);
   console.log(isPowerOf(100, 5) === false);
   console.log(isPowerOf(1, 2) === true);
-  // Your sanity checks here.
 }
 
 module.exports = isPowerOf;
