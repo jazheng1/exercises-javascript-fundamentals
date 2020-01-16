@@ -24,11 +24,26 @@
  */
 function factorial(n) {
   // This is your job. :)
+  let count = 1;
+  if(n === 0){
+    return 0;
+  }else{
+    let i = 1;
+    while(i <= n){
+      count = i * count;
+      i++;
+    }
+  }
+  return count;
 }
 
 if (require.main === module) {
-  console.log('Running sanity checks for factorial:');
-
+console.log('Running sanity checks for factorial:');
+console.log(factorial(1) === 1);
+console.log(factorial(2) === 2);
+console.log(factorial(3) === 6);
+console.log(factorial(5) === 120);
+console.log(factorial(0) === 0);
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
 }
