@@ -13,12 +13,20 @@
  */
 function sumOfRange(leftSummand, rightSummand) {
   // This is your job. :)
+  let sum = 0;
+  let i;
+  for(i = leftSummand; i <= rightSummand; i++){
+    sum = i + sum;
+  }
+  return sum;
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for sumOfRange:');
 
   // Your sanity checks go here
+  console.log(sumOfRange(1,5) === 15);
+  console.log(sumOfRange(-3,4) === 4);
 }
 
 module.exports = sumOfRange;
