@@ -23,11 +23,11 @@ function isPrime(num) {
  if(num <= 1){
   return false;
  }
- else if((num % 3 === 0) && (num > 4)){
+ else if((num % 3 === 0) && (num > 3)){
    return false;
  }else if((num % 5 === 0) && (num > 5)){
    return false;
- }else if((num % 2 === 0) && (num > 3)){
+ }else if((num % 2 === 0) && (num > 2)){
   return false;
 }
  else{
