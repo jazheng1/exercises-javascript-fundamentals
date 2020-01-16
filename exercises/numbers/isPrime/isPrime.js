@@ -13,13 +13,26 @@
 function isPrime(num) {
   /*
     Your code goes here.
-
+  
     Work out one version that works and don't worry about performance.
 
     If you're having trouble working it out in code, step out of JS-land
     and use pen/paper, index cards, etc. — anything that helps you think
     about it without getting stuck in JavaScript syntax.
   */
+ if(num <= 1){
+  return false;
+ }
+ else if((num % 3 === 0) && (num > 4)){
+   return false;
+ }else if((num % 5 === 0) && (num > 5)){
+   return false;
+ }else if((num % 2 === 0) && (num > 3)){
+  return false;
+}
+ else{
+   return true;
+ }
 }
 
 if (require.main === module) {
@@ -28,6 +41,9 @@ if (require.main === module) {
   console.log(isPrime(1) === false);
   console.log(isPrime(2) === true);
   console.log(isPrime(4) === false);
+  console.log(isPrime(7) === true);
+  console.log(isPrime(157) === true);
+  console.log(isPrime(326) === false);
 
   // Your own sanity checks go here
 }
