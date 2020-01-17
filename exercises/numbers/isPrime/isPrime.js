@@ -20,19 +20,22 @@ function isPrime(num) {
     and use pen/paper, index cards, etc. — anything that helps you think
     about it without getting stuck in JavaScript syntax.
   */
- if(num <= 1){
-  return false;
+ let counter = 0;
+ if(num === 1){
+   return false;
+ }else{
+  for(i=1; i < num; i++){
+    if(num%i === 0){
+      counter++;
+    }
+  }
  }
- else if((num % 3 === 0) && (num > 3)){
-   return false;
- }else if((num % 5 === 0) && (num > 5)){
-   return false;
- }else if((num % 2 === 0) && (num > 2)){
+
+if(counter < 2){
+  return true;
+}else{
   return false;
 }
- else{
-   return true;
- }
 }
 
 if (require.main === module) {
