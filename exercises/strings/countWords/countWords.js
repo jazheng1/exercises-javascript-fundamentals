@@ -9,6 +9,11 @@
 
 function countWords(string) {
   // This is your job. :)
+  let count = 0;
+  for(i=0; i < string.length; i++){
+      count++;
+  }
+  return count;
 }
 
 if (require.main === module) {
@@ -16,6 +21,9 @@ if (require.main === module) {
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
+  console.log(countWords('Happy') === 5);
+  console.log(countWords('') === 0);
+  console.log(countWords('Sad') === 3);
 }
 
 module.exports = countWords;
