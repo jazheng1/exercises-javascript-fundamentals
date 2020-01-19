@@ -20,11 +20,22 @@
  */
 function median(array) {
   // This is your job. :)
+  let newArr = array.sort()
+  console.log(newArr)
+
+  if(newArr.length % 2 > 0){
+    console.log(newArr[Math.floor(newArr.length/2)]);
+    return newArr[Math.floor(newArr.length/2)]
+  }else{
+    console.log(newArr[newArr.length/2] + newArr[(newArr.length/2) -1])/2;
+    return (newArr[newArr.length/2] + newArr[(newArr.length/2) -1])/2;
+  }
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for median:');
-
+  console.log(median([900, 10, 20]) === 20);
+  console.log(median([-10, 20, 400, 10]) === 15);
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
 }
