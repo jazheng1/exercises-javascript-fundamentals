@@ -17,10 +17,20 @@
  */
 function firstIndexOf(haystack, needle) {
   // This is your job. :)
+  for(i=0; i< haystack.length; i++){
+  if(haystack[i] === needle){
+    return i;
+  }
+}
+return -1;
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for firstIndexOf:');
+  console.log(firstIndexOf([10, 20, 30, 20], 20) === 1);
+  console.log(firstIndexOf([10, 20, 30, 20], 17) === -1);
+  console.log(firstIndexOf(['giraffe', 'giraffe', 'banana'], 'giraffe') === 0);
+  console.log(firstIndexOf(['giraffe', 'giraffe', 'banana'], 'banana') === 2);
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
