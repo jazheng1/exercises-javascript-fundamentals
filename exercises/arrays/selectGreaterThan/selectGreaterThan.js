@@ -18,12 +18,25 @@
  */
 function selectGreaterThan(array, threshold) {
   // This is your job. :)
+  let newArr = [];
+  for(i=0; i< array.length; i++){
+    if(array[i] > threshold){
+      newArr.push(array[i]);
+    }
+  }
+  console.log(newArr);
+  return newArr;
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for selectGreaterThan:');
 
   // Add your own sanity checks here.
+  console.log(selectGreaterThan([1, 2, 3, 4, 5], 2) === [3, 4, 5]);
+  console.log(selectGreaterThan([1, 2, 3, 4, 5], 17) === []);
+  console.log(selectGreaterThan([-20, 2, 1, 0, 1, 2, 1, 2], 1) === [2, 2, 3, 4, 2]);
+  console.log(selectGreaterThan([10, 4, 10, -10, 15], 10) === [15]);
+  console.log(selectGreaterThan([10, 20, 30, 40], 100) === []);
   // How else will you be sure your code does what you think it does?
 }
 
