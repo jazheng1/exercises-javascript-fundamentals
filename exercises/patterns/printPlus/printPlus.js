@@ -46,7 +46,6 @@ function printPlus(height) {
       let numSpaces = Math.floor(height / 2)
       helpers.printCountTimes(' ', numSpaces);
       console.log('#');
-      helpers.printNewLine();
     }
   }
 }
