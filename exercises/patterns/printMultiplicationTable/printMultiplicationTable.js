@@ -29,8 +29,13 @@ function printMultiplicationTable(n) {
     multiplication table without concern for alignment and then figure
     out how to align the columns.
   */
-
-  helpers.printNewLine();
+ for(let i = 1; i < n; i++){
+    for(let j = 1; j <= n; j++){
+      helpers.printCountTimes((i*j).toString(), 1);
+      helpers.printCountTimes(' ', 1);
+   }
+   helpers.printNewLine();
+  }
 }
 
 /**
