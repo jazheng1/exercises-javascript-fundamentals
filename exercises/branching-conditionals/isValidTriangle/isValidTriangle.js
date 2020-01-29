@@ -19,19 +19,43 @@ function isValidTriangle(a, b, c) {
     from 0º and you drawing the third side. What's the largest this third side
     could ever be?
   */
+ let maxLength = 0;
+ let sideOne = 0;
+ let sideTwo = 0;
+ if(a > b && a > c){
+   maxLength = a;
+   sideOne = b;
+   sideTwo = c;
+ }else if(a < b && b > c){
+   maxLength = b;
+   sideOne = a;
+   sideTwo = c;
+ }else if(c > a && c > b){
+   maxLength = c;
+   sideOne = a;
+   sideTwo = b;
+ }
+
+ if(sideOne + sideTwo < maxLength || maxLength === 0){
+   return false;
+}else{
+  return true;
+}
+
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for isValidTriangle:');
 
-  // The order of the arguments should not matter.
+  //The order of the arguments should not matter.
   console.log(isValidTriangle(3, 4, 5) === true);
   console.log(isValidTriangle(3, 5, 4) === true);
   console.log(isValidTriangle(4, 3, 5) === true);
   console.log(isValidTriangle(4, 5, 3) === true);
   console.log(isValidTriangle(5, 3, 4) === true);
   console.log(isValidTriangle(5, 4, 3) === true);
-
+  console.log(isValidTriangle(1, 1, 3) === false);
+  console.log(isValidTriangle(0, 0, 0) === false);
   // Add your own sanity checks here. Test negative cases.
   // How else will you be sure your code does what you think it does?
 }
