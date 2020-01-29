@@ -35,10 +35,11 @@ function printSolidPyramid(height) {
 
     Work through 3-4 examples by hand and try to notice a pattern.
   */
+ let counter = 1;
   for (let i = 0; i < height; i++) {
-    let numSpaces = _____;
-    let numChars = _____;
-
+    let numSpaces = height - i;
+    let numChars = counter;
+    counter += 2
     helpers.printCountTimes(' ', numSpaces);
     helpers.printCountTimes('#', numChars);
     helpers.printNewLine();

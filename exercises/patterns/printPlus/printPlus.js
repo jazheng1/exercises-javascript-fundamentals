@@ -39,8 +39,14 @@ function printPlus(height) {
 
   for (let i = 0; i < height; i++) {
     // This is your job. :)
-
-    helpers.printNewLine();
+    if(i === Math.floor(height/ 2)){
+      helpers.printCountTimes('#', height)
+      helpers.printNewLine();
+    }else{
+      let numSpaces = Math.floor(height / 2)
+      helpers.printCountTimes(' ', numSpaces);
+      console.log('#');
+    }
   }
 }
 
