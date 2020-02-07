@@ -24,8 +24,49 @@
  * @returns {string} Returns 'win', 'lose', or 'draw' depending on
  *  whether the first player won, lost, or drew the match.
  */
+
+// let process = require('process');
+let readlineSync = require('readline-sync');
+
 function rockPaperScissorsWinner(array) {
   // This is your job. :)
+  let gameResult = '';
+  if (array[0] == array[1]) {
+    gameResult = 'Tied';
+  }
+  if (array[0] == 1 && array[1] === 0) {
+    gameResult = 'Lose';
+  }
+  if (array[0] == 2 && array[1] === 0) {
+    gameResult = 'Win';
+  }
+  if (array[0] == 0 && array[1] === 1) {
+    gameResult = 'Win';
+  }
+  if (array[0] == 2 && array[1] === 1) {
+    gameResult = 'Lose';
+  }
+  if (array[0] == 1 && array[1] === 2) {
+    gameResult = 'Win';
+  }
+  if (array[0] == 0 && array[1] === 2) {
+    gameResult = 'Lose';
+  }
+  return gameResult;
+}
+
+function decipher(num) {
+  let choice = '';
+  if (num == '0') {
+    choice = 'scissors';
+  }
+  if (num == '1') {
+    choice = 'paper';
+  }
+  if (num == '2') {
+    choice = 'rock';
+  }
+  return choice;
 }
 
 if (require.main === module) {
@@ -33,6 +74,16 @@ if (require.main === module) {
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
+  console.log('Welcome to a game of Rock, Paper, Scissors');
+  console.log();
+  console.log('Rules: 2 = Rock | 1 = Paper | 0 = Scissors');
+  console.log();
+  let user1 = readlineSync.question('Choose your move (number): ');
+  console.log('You chose ' + decipher(user1));
+  let user2 = Math.floor(Math.random() * 3);
+  console.log('Computer chose ' + decipher(user2));
+  let gameArr = [`${user1}`, user2];
+  console.log('You ' + rockPaperScissorsWinner(gameArr) + '!!');
 }
 
 module.exports = rockPaperScissorsWinner;
